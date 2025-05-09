@@ -1,0 +1,14 @@
+{
+  "name": "RevisaoSaep",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "https://github.com/otavionvs/RevisaoSaep.git",
+  "author": "Otavio Neves <otavio_neves@estudante.sesisenai.org.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0",
+    "json": "^11.0.0",
+    "prisma": "^6.7.0"
+  }
+}
