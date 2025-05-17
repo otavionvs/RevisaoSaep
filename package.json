@@ -7,11 +7,13 @@
   "author": "Otavio Neves <otavio_neves@estudante.sesisenai.org.br>",
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "^6.8.2",
     "express": "^5.1.0",
+    "express-decorators": "^1.2.1",
     "json": "^11.0.0",
     "npm": "^11.3.0",
     "npx": "^10.2.2",
-    "prisma": "^6.7.0"
+    "prisma": "^6.8.2",
+    "reflect-metadata": "^0.2.2"
   }
 }
