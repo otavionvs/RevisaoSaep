@@ -1,11 +1,13 @@
 import express from "express"
 import { PrismaClient } from '@prisma/client'
+import cors  from 'cors';
 const prisma = new PrismaClient()
 
 const app = express()
 const port = 3000
 
 app.use(express.json());
+app.use(cors());
 
 const usuarios = [];
 
@@ -24,12 +26,25 @@ app.get('/usuarios/:id', async (req, res) => {
     ))
 });
 
+//Login
+app.post('/usuarios/login', async (req, res) => {
+    const {nome, senha} = req.body;
+    const findUser = await prisma.user.findFirst({
+        where: { name: nome, senha: senha}
+    })
+    if(findUser) {
+        res.status(200).send();    
+    }
+    res.status(401).send();
+});
+
 //Criar
 app.post('/usuarios', async (request, respose) => {
     const user = await prisma.user.create({
         data: {
             name: request.body.nome,
-            idade: request.body.idade
+            idade: request.body.idade,
+            senha: request.body.senha
         },
     })
 

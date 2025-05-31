@@ -11,4 +11,5 @@ model user {
   id    Int    @id @default(autoincrement())
   name  String @db.VarChar(255)
   idade Int
+  senha String @db.VarChar(255)
 }
